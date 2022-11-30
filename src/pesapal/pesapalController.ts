@@ -25,7 +25,7 @@ const getAccessToken = async() => {
 const IPNRegistration = async() => {
     const accessToken = await getAccessToken();
     const ipnUrl = {
-        url: "https://8f87-2c0f-fe38-2401-b4f6-43d1-7f1a-f301-d986.ap.ngrok.io/pesapal/ipn",
+        url: "https://api.coding-4u.com/pesapal/ipn",
         ipn_notification_type: "POST"
     };
     if(!accessToken) return null;
@@ -97,7 +97,7 @@ const IPNGUID = async(url: string) => {
 const submitOrderRequestEndpoint = async (req: Request, res: Response) => {
     const { amount,  email, firstName, lastName } = req.body;
     const accessToken = await getAccessToken();
-    const notification_id = await IPNGUID('https://8f87-2c0f-fe38-2401-b4f6-43d1-7f1a-f301-d986.ap.ngrok.io/pesapal/ipn');
+    const notification_id = await IPNGUID('https://api.coding-4u.com/pesapal/ipn');
 
     const requestBody = {
         id: crypto.randomUUID(),
