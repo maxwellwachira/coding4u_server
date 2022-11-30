@@ -26,8 +26,8 @@ export const sendMail =  async ({ to, subject, text, html }: SendMailData) => {
             "Messages":[
                     {
                             "From": {
-                                    "Email": "info@luddoc-institute.com",
-                                    "Name": "Luddoc Institute"
+                                    "Email": "info@coding-4u.com",
+                                    "Name": "Coding4U"
                             },
                             "To": [
                                     {
