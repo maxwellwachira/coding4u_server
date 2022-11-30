@@ -33,7 +33,7 @@ const createUser = async (req: Request, res: Response) => {
         await addAccountToken({token, UserId: Number(userObject.id)});
         //send email to user
         const url = `${urls.clientUrl}/auth/activation?token=${token}&id=${userObject.id}`;
-        await sendMail({to: email, subject: 'Account Activation', html: emailTemplates.registration(firstName, 'Account Activation', url)});
+        await sendMail({to: email, subject: 'Coding4U Account', html: emailTemplates.registration(firstName, 'Account Activation', url)});
        
         return res.status(201).json({record, message:"success"});
     } catch (error) {

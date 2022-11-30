@@ -99,7 +99,7 @@ const resendActivationToken =  async (req: Request, res: Response) => {
        const record  = await addAccountToken({token, UserId});
        //Send Email, url to have token and Userid
        const url = `${urls.clientUrl}/auth/activation?token=${token}&id=${id}`;
-       await sendMail({to: email, subject: 'Account Activation', html: emailTemplates.registration(firstName, 'Account Activation', url)});
+       await sendMail({to: email, subject: 'Coding4U Account', html: emailTemplates.registration(firstName, 'Account Activation', url)});
 
        return res.status(201).json({record, message:"success"});
     } catch (error) {
