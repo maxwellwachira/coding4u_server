@@ -46,7 +46,7 @@ const emailTemplates = {
         `;
     } ,
     
-    contactForm: (from: string, subject: string, message: string) => {
+    contactForm: (from: string, subject: string, message: string, name: string) => {
         return `
         <html>
         <body style="margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;">
@@ -56,6 +56,7 @@ const emailTemplates = {
                     <div style="margin: 30px auto; background: white; width: 40%; border-radius: 10px; padding: 50px; text-align: center;">
                         <h3 style="margin-bottom: 100px; font-size: 24px; color: black;">Dear Coding4U, you have received the following message from contact form:</h3>
                         <h4>From: ${from}</h4>
+                        <h4>Name: ${name}</h4>
                         <h4>Subject: ${subject} </h4>
                         <h4>Message: ${message} </h4>
                         <p style="display: block; margin: 0 auto; border: none; background-color: #FF0000; color: white; width: 50%; line-height: 24px; padding: 10px; font-size: 20px; border-radius: 10px; cursor: pointer; text-decoration: none;"
