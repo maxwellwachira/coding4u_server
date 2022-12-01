@@ -42,7 +42,7 @@ const IPNRegistration = async() => {
 // const IPNRegistrationRequest = async(req: Request, res: Response) => {
 //     const accessToken = await getAccessToken();
 //     const ipnUrl = {
-//         url: "https://8f87-2c0f-fe38-2401-b4f6-43d1-7f1a-f301-d986.ap.ngrok.io/pesapal/ipn",
+//         url: "https://api.coding-4u.com/pesapal/ipn",
 //         ipn_notification_type: "POST"
 //     };
 //     if(!accessToken) return res.status(401).json({message: "invalid access token"});

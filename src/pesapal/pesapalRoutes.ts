@@ -5,7 +5,7 @@ import {
     getTransactionStatus,
     ipnHandler,
     // getRegisteredIPNRequest,
-    // IPNRegistrationRequest
+     //IPNRegistrationRequest
 } from './pesapalController';
 
 const router = express.Router();
@@ -19,7 +19,7 @@ router.post('/transaction-status', getTransactionStatus);
 
 // router.get('/registered-urls', getRegisteredIPNRequest);
 
-// router.get('/register-ipn', IPNRegistrationRequest);
+//router.get('/register-ipn', IPNRegistrationRequest);
 
 
 export default router;
