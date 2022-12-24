@@ -20,6 +20,8 @@ import uploadRoutes from "./src/lms/uploads/uploadsRoutes";
 import enrolmentRoutes from "./src/lms/enrolments/enrolmentRoutes";
 //pesapal routes
 import pesapalRoutes from "./src/pesapal/pesapalRoutes";
+//Newsletter
+import newletterRoutes from "./src/newsletter/newsletterRoutes";
 
 dotenv.config();
 
@@ -48,6 +50,7 @@ app.use('/email',emailRoutes);
 app.use('/upload', uploadRoutes);
 app.use('/enrolment', enrolmentRoutes);
 app.use('/pesapal', pesapalRoutes);
+app.use('/newsletter', newletterRoutes);
 
 app.listen(port,() => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
