@@ -10,6 +10,7 @@ interface UserAttributes {
     phoneNumber: string;
     password: string;
     role: "student" | "tutor" | "admin";
+    referralCode: string;
     active: boolean;
     disabled: boolean;
 }
@@ -54,6 +55,11 @@ UserModel.init({
    role: {
     type: DataTypes.STRING,
     allowNull: false
+   },
+   referralCode: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    field: "referral_code"
    },
    active: {
     type: DataTypes.BOOLEAN,

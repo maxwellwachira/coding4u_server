@@ -6,6 +6,7 @@ import {
     getAllTutors,
     getAllUsers,
     getOneUser,
+    getUserByEmail,
     getUserMe,
     removeUser,
     updateUser
@@ -28,6 +29,8 @@ router.get('/students', getAllStudents);
 router.get('/tutors', getAllTutors);
 //get one user
 router.get('/:id', getOneUser);
+//get user by email
+router.get('/email/:email', getUserByEmail)
 //update user
 router.put('/:id', updateUser);
 //delete user

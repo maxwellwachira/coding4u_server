@@ -1,10 +1,10 @@
 import { UserModel } from "../users/userModel";
 import { UserRegistrationData } from "./userInterfaces";
 
-const addUser = async ({firstName, lastName, email,phoneNumber, password}: UserRegistrationData) => {
+const addUser = async ({ firstName, lastName, email, phoneNumber, password, referralCode }: UserRegistrationData) => {
     const role = "student";
     const active = false;
-    const disabled =  false;
+    const disabled = false;
 
     return await UserModel.create({
         firstName,
@@ -12,6 +12,7 @@ const addUser = async ({firstName, lastName, email,phoneNumber, password}: UserR
         email,
         phoneNumber,
         password,
+        referralCode,
         role,
         active,
         disabled
@@ -87,6 +88,14 @@ const findUserById = async (id: number) => {
     });
 }
 
+const findUserByReferralCode = async (referralCode: string) => {
+    return await UserModel.findOne({
+        where: {
+            referralCode
+        }
+    });
+}
+
 const findUserByEmail = async (email: string) => {
     return await UserModel.findOne({
         where: {
@@ -109,4 +118,5 @@ export {
     findAllUsers,
     findUserByEmail,
     findUserById,
+    findUserByReferralCode
 };

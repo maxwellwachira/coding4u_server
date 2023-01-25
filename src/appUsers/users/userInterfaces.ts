@@ -4,6 +4,7 @@ interface UserRegistrationData {
     email: string;
     password: string;
     phoneNumber: string;
+    referralCode: string;
 }
 
 
