@@ -22,6 +22,8 @@ import enrolmentRoutes from "./src/lms/enrolments/enrolmentRoutes";
 import pesapalRoutes from "./src/pesapal/pesapalRoutes";
 //Newsletter
 import newletterRoutes from "./src/newsletter/newsletterRoutes";
+//Referrals
+import referralsRoutes from "./src/referrals/referralsRoutes";
 
 dotenv.config();
 
@@ -51,6 +53,7 @@ app.use('/upload', uploadRoutes);
 app.use('/enrolment', enrolmentRoutes);
 app.use('/pesapal', pesapalRoutes);
 app.use('/newsletter', newletterRoutes);
+app.use('/referral', referralsRoutes);
 
 app.listen(port,() => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
