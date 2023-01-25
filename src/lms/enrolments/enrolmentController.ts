@@ -6,7 +6,8 @@ import {
     findAllEnrolmentsInCourse,
     findEnrolmentById,
     findEnrolmentByUserId,
-    findEnrolmentByUserIdAndCourseId
+    findEnrolmentByUserIdAndCourseId,
+    findEnrolmentCountByUserId
 } from './enrolmentService';
 
 const createEnrolment = async (req: Request, res: Response) => {
@@ -91,6 +92,18 @@ const getEnrolmentByUserAndCourse = async(req: Request, res: Response) => {
     }
 }
 
+const getEnrolmentCountByUserId = async(req: Request, res: Response) => {
+    let UserId = req.params.userId as string;
+
+    try {
+        //check if enrolment exists
+        const enrolment = await findEnrolmentCountByUserId(Number(UserId));
+        return res.status(200).json(enrolment);
+    } catch (error) {
+        return res.status(500).json({message:"error", error});
+    }
+}
+
 const getOneEnrolment = async (req: Request, res: Response) => {
     const { id } = req.params;
 
@@ -141,6 +154,7 @@ export {
     getAllEnrolmentsByUser,
     getAllEnrolmentsInCourse,
     getEnrolmentByUserAndCourse,
+    getEnrolmentCountByUserId,
     getOneEnrolment,
     removeEnrolment,
     updateEnrolment

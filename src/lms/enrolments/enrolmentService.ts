@@ -85,6 +85,18 @@ const findEnrolmentByUserId = async (page: number, limit: number, UserId: number
     };
 }
 
+const findEnrolmentCountByUserId = async (UserId: number) => {
+    const { count } = await EnrolmentModel.findAndCountAll({
+        where: {
+            UserId
+        }
+    });
+
+    return {
+        count,
+    };
+}
+
 const findEnrolmentByUserIdAndCourseId = async (UserId: number, CourseId: number) => {
     return await EnrolmentModel.findOne({
         where: {
@@ -100,5 +112,6 @@ export {
     findAllEnrolmentsInCourse,
     findEnrolmentById,
     findEnrolmentByUserId,
-    findEnrolmentByUserIdAndCourseId
+    findEnrolmentByUserIdAndCourseId,
+    findEnrolmentCountByUserId
 };

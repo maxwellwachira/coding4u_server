@@ -6,6 +6,7 @@ import {
     getAllEnrolmentsByUser,
     getAllEnrolmentsInCourse,
     getEnrolmentByUserAndCourse,
+    getEnrolmentCountByUserId,
     getOneEnrolment,
     removeEnrolment,
     updateEnrolment
@@ -27,6 +28,8 @@ router.get('/me', authMiddleware, getAllEnrolmentsByUser);
 router.get('/course/:courseId', getAllEnrolmentsInCourse);
 //Get single enrolment by course and user Id
 router.get('/course/:courseId/user/:userId', getEnrolmentByUserAndCourse);
+//get single user enrolment count
+router.get('/count/:userId', getEnrolmentCountByUserId);
 //get one enrolment
 router.get('/:id', getOneEnrolment);
 //update enrolment
