@@ -24,6 +24,8 @@ import pesapalRoutes from "./src/pesapal/pesapalRoutes";
 import newletterRoutes from "./src/newsletter/newsletterRoutes";
 //Referrals
 import referralsRoutes from "./src/referrals/referralsRoutes";
+//Students's certificates routes
+import certificateRoutes from "./src/lms/certificates/certRoutes";
 
 dotenv.config();
 
@@ -54,6 +56,7 @@ app.use('/enrolment', enrolmentRoutes);
 app.use('/pesapal', pesapalRoutes);
 app.use('/newsletter', newletterRoutes);
 app.use('/referral', referralsRoutes);
+app.use('/cert', certificateRoutes);
 
 app.listen(port,() => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
