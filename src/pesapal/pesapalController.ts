@@ -101,7 +101,7 @@ const submitOrderRequestEndpoint = async (req: Request, res: Response) => {
 
     const requestBody = {
         id: crypto.randomUUID(),
-        currency: 'KES',
+        currency: 'USD',
         amount: amount,
         description: 'Online course registration',
         callback_url: `${urls.clientUrl}/payment-notification`,
